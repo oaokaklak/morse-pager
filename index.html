@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morse Pager</title>
+    <script src="https://js.pusher.com/8.0/pusher.min.js"></script>
+    <style>
+        body { background: #0f0f0f; color: #00ff41; font-family: 'Courier New', monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        #flash-screen { width: 300px; height: 150px; border: 2px solid #00ff41; margin-bottom: 20px; transition: background 0.05s; }
+        .active { background: #00ff41 !important; box-shadow: 0 0 50px #00ff41; }
+        #output-text { font-size: 2.5rem; min-height: 1.5em; text-shadow: 0 0 10px #00ff41; margin-bottom: 30px; }
+        .ui-box { background: #1a1a1a; padding: 20px; border-radius: 8px; border: 1px solid #333; text-align: center; }
+        input { padding: 12px; font-size: 1rem; background: #000; color: #00ff41; border: 1px solid #00ff41; margin: 5px; width: 200px; }
+        button { padding: 12px 24px; font-size: 1rem; cursor: pointer; background: #00ff41; color: #000; border: none; font-weight: bold; transition: 0.2s; }
+        button:hover { background: #00cc33; }
+        .status { font-size: 0.8rem; color: #888; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div id="login-screen" class="ui-box">
+        <h2>REGISTER PAGER</h2>
+        <input type="text" id="myNumber" placeholder="Enter Your Number (e.g. 555)">
+        <button onclick="initConnection()">GO ONLINE</button>
+    </div>
+
+    <div id="pager-screen" class="ui-box" style="display:none;">
+        <div id="flash-screen"></div>
+        <div id="output-text"></div>
+        <input type="text" id="targetNumber" placeholder="Recipient Number">
+        <input type="text" id="messageInput" placeholder="Message">
+        <button onclick="sendMessage()">SEND SIGNAL</button>
+        <div class="status" id="statusMsg">Online as: --</div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
