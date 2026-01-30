@@ -84,7 +84,7 @@
             const to = document.getElementById('target').value;
             const text = document.getElementById('msg').value;
             // Point this to your Vercel URL
-            await fetch('morse-pager-telegraph.vercel.app', {
+            await fetch('morse-pager-telegraph-9c662k94e-gabriel-vigilantes-projects.vercel.app', {
                 method: 'POST',
                 body: JSON.stringify({ to: `channel-${to}`, message: text })
             });
@@ -128,6 +128,7 @@
     </script>
 </body>
 </html>
+
 
 
 
